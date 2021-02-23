@@ -6,8 +6,14 @@ namespace ConversaoValores
     /***  TIPOS DE DADOS PRIMITIVOS C#                                         **********/
     /************************************************************************************/
 
+    // object - apontamento comum para qualquer objeto, representação base
     // bool - valor de teste logico valores aceitaveis true ou false
     // char - representação de um char baseado na tabela ASCII
+
+    // string - utilizado para armazenar texto
+    // enum - simboliza um enumerador
+    // struct -  pode encapsular dados e funcionalidades relacionadas
+    //  struct vs class - classes podem ser reaproveitados seus apontamentos structures não.
 
     // Ponto Flutuante
     // float - aceita um numero com ponto flutuante de ate 4bytes
