@@ -34,30 +34,15 @@ namespace UtilizandoIfTernario
                     Console.WriteLine("4 - Dinheiro");
                     Console.WriteLine("5 - Transferencia");
 
-                    int tipoPagamento = Convert.ToInt32(Console.ReadLine());
-
-                    if (tipoPagamento == 1)
-                        cliente.Pagamento.TipoPagamento = TipoPagamento.Debito;
-                    else if (tipoPagamento == 2)
-                        cliente.Pagamento.TipoPagamento = TipoPagamento.Credito;
-                    else if (tipoPagamento == 3)
-                        cliente.Pagamento.TipoPagamento = TipoPagamento.Pix;
-                    else if (tipoPagamento == 4)
-                        cliente.Pagamento.TipoPagamento = TipoPagamento.Dinheiro;
-                    else if (tipoPagamento == 5)
-                        cliente.Pagamento.TipoPagamento = TipoPagamento.Transferencia;
-                    else
-                        Console.WriteLine("Tipo de pagamento não registrado");
-
+                    TipoPagamento tipoPagamento = (TipoPagamento)Convert.ToInt32(Console.ReadLine());
+                    cliente.Pagamento.TipoPagamento = tipoPagamento;
                     cliente.Pagamento.DataPagamento = DateTime.Now;
 
                     Console.WriteLine("Por favor digite o valor do pagamento ");
                     cliente.Pagamento.Valor = Convert.ToDecimal(Console.ReadLine());
 
                     if (cliente.Pagamento.DataPagamento <= cliente.Pagamento.DataVencimento)
-                    {
                         RealizarPagamento(cliente.Pagamento);
-                    }
                     else
                         Console.WriteLine("Pagamento não pode ser realizado por estar vencido");
                 }
