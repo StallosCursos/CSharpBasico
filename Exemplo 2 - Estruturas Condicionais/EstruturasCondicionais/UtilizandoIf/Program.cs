@@ -6,6 +6,7 @@ namespace UtilizandoIf
     {
         static void Main(string[] args)
         {
+
             Cliente cliente = new Cliente();
 
             Console.WriteLine("Olá informe seu nome. ");
@@ -20,6 +21,11 @@ namespace UtilizandoIf
             Console.WriteLine($"Muito bem {cliente.Nome} deseja realizar um pagamento ? S - sim ou N - Não ");
             string realizarPagamento = Console.ReadLine();
 
+            /*
+                == - Igualdade
+                != - Diferente
+                !  - Inversão - Não
+            */
             if (realizarPagamento.ToUpper() == "S")
             {
                 if (cliente.MaiorIdade)
@@ -53,6 +59,13 @@ namespace UtilizandoIf
                     Console.WriteLine("Por favor digite o valor do pagamento ");
                     cliente.Pagamento.Valor = Convert.ToDecimal(Console.ReadLine());
 
+                    /*
+                        <= - Menor ou igual
+                        >= - Maior ou igual
+                        == - Igualdade
+                        < - Menor
+                        > - Maior
+                     */
                     if (cliente.Pagamento.DataPagamento <= cliente.Pagamento.DataVencimento)
                     {
                         RealizarPagamento(cliente.Pagamento);

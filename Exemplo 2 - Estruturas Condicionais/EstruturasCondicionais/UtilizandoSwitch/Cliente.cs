@@ -9,7 +9,8 @@ namespace UtilizandoSwitch
 
         public string Nome { get; set; }
         public string Cpf { get; set; }
-        public bool MaiorIdade { get; set; }
+
+        public bool MaiorIdade => _maiorIdade;
 
         public DateTime DataNacimento
         {
