@@ -19,7 +19,7 @@ namespace Listas
 
             UtilizandoEnumeradores();
             Divisor();
-
+ 
             UtilizandoListaAutoOrdenada();
             Divisor();
 
@@ -106,10 +106,10 @@ namespace Listas
             Console.WriteLine($"Mensagen: {Mensagens["MSG0004"]}");
             Console.WriteLine($"Mensagen: {Mensagens["MSG0005"]}");
 
-            /*if (Mensagens.ContainsKey("MSG0002"))
+            if (Mensagens.ContainsKey("MSG0002"))
                 Mensagens.Remove("MSG0002");
 
-            Console.WriteLine($"Mensagen: {Mensagens["MSG0002"]}");*/
+            //Console.WriteLine($"Mensagen: {Mensagens["MSG0002"]}");
 
             string stringOut = "";
             Mensagens.TryGetValue("MSG0002", out stringOut);
@@ -124,6 +124,7 @@ namespace Listas
             Console.WriteLine("Exemplo 2 - Utilizando Listas");
 
             List<string> alphabeto = new List<string>();
+
             alphabeto.Add("A");
             alphabeto.Add("B");
             alphabeto.Add("C");

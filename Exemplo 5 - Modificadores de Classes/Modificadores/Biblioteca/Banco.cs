@@ -1,31 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace Biblioteca
 {
     internal class Banco
     {
-        private IDictionary<Guid, string> _banco;
+        protected IDictionary<Guid, string> BancoStorage { get; set; }
 
         public Banco()
         {
-            _banco = new Dictionary<Guid, string>();
+            BancoStorage = new Dictionary<Guid, string>();
         }
 
-        private Guid _novaChave => new Guid();
+        internal void Adicionar(Guid key, string texto) => BancoStorage.Add(key, texto);
 
-        internal void Adicionar(string texto)
-        {
-            _banco.Add(_novaChave, texto);
-        }
+        internal void Atualizar(Guid key, string texto) => BancoStorage[key] = texto;
 
-        internal void Atualizar(Guid key, string texto)
-        {
+        internal void Remover(Guid key) => BancoStorage.Remove(key);
 
-        }
+        internal string Buscar(Guid key) => BancoStorage[key];
 
-        internal KeyValuePair<Guid, string> Buscar (Guid Guid) =>
-           
+        internal bool ChaveExistente(Guid key) => BancoStorage.ContainsKey(key);
+
+        internal virtual List<KeyValuePair<Guid, string>> BuscarTodos => BancoStorage.ToList();
     }
 }

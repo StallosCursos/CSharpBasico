@@ -19,6 +19,7 @@ namespace EstruturasLaco
         {
             Console.WriteLine("Informe um numero de 0 a 10");
             int numero = Convert.ToInt32(Console.ReadLine());
+
             foreach (var texto in Tabuada(numero))
                 Console.WriteLine(texto);
         }
